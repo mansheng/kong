@@ -23,6 +23,7 @@ The main focus of this release is Kong's new CLI. With a simpler configuration f
   - Bot Detection: Added a new plugin that protects APIs by detecting common bots and crawlers. [#1413](https://github.com/Mashape/kong/pull/1413)
   - correlation-id: new "tracker" generator, identifying requests per worker and connection. [#1288](https://github.com/Mashape/kong/pull/1288)
   - request/response-transformer: ability to add strings including colon characters. [#1353](https://github.com/Mashape/kong/pull/1353)
+  - galileo: performance improvements of ALF serialization. ALFs are not discarded when exceeding 20MBs anymore. [#1463](https://github.com/Mashape/kong/issues/1463)
 
 ### Removed
 
