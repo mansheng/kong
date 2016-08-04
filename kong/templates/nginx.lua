@@ -5,6 +5,8 @@ daemon ${{NGINX_DAEMON}};
 pid pids/nginx.pid;
 error_log logs/error.log ${{LOG_LEVEL}};
 
+env PATH;
+
 > if nginx_optimizations then
 worker_rlimit_nofile ${{WORKER_RLIMIT}};
 > end

@@ -75,6 +75,11 @@ if [ ! "$(ls -A $CACHE_DIR)" ]; then
 fi
 
 export PATH=$PATH:$OPENRESTY_INSTALL/nginx/sbin:$OPENRESTY_INSTALL/bin:$LUAROCKS_INSTALL/bin:$SERF_INSTALL
+# echo $PATH
+
+# Copy Serf bin in an already existing $PATH location. If not,
+# it seems kong/serf.lua cannot find Serf at runtime.
+# cp $SERF_INSTALL/serf $HOME/bin
 
 eval `luarocks path`
 
@@ -92,3 +97,7 @@ if [[ "$TEST_SUITE" != "unit" ]] && [[ "$TEST_SUITE" != "lint" ]]; then
   ccm status
 fi
 
+nginx -V
+resty -V
+luarocks --version
+serf version
